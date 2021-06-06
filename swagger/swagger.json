@@ -1,0 +1,200 @@
+{
+    "swagger": "2.0", 
+    "info": {
+        "description": "This is api documentation for node with firestore.",
+        "version": "1.0.0",
+        "title": "Swagger for node with firestore",
+        "termsOfService": "",
+        "contact": {
+            "email": ""
+        }
+    },    
+    "basePath" : "/",
+    "tags": [
+        {
+            "name": "Users"
+        }       
+    ],
+    "schemes": [
+        "https",
+        "http"
+    ],
+    "paths": 
+        {
+        "/users/create": {
+            "post": {
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "tags": [
+                    "Users"
+                ],
+                "summary": "",
+                "description": "This api endpoint for create a new user",
+                "operationId": "create user",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [                      
+                    {
+                        "name": "first_name",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_name",
+                        "required": true,
+                        "in": "formData",
+                        "type": "string"                        
+                    },
+                    {
+                        "name": "email",
+                        "required": true,
+                        "in": "formData",
+                        "type": "string" 
+                    },
+                    {
+                        "name": "password",
+                        "required": true,
+                        "in": "formData",
+                        "type": "string"
+                    },
+                    {
+                        "name": "phone_number",
+                        "required": true,
+                        "in": "formData",
+                        "type": "string"
+                    },
+                    {
+                        "name": "gender",
+                        "required": true,
+                        "in": "formData",
+                        "type": "string",
+                        "enum": ["","male","female"]
+                    }                    
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User created successfully"
+                    }
+                }
+            }
+        },
+        "/users/list": {
+            "get": {
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "tags": [
+                    "Users"
+                ],
+                "summary": "",
+                "description": "This api endpoint for list all the users",
+                "operationId": "list user",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [                      
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page_no",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }                                                                    
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User retrieved successfully"
+                    }
+                }
+            }
+        },
+        "/users/update": {
+            "put": {
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "tags": [
+                    "Users"
+                ],
+                "summary": "",
+                "description": "This api endpoint for update user",
+                "operationId": "update user",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [                      
+                    {
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "first_name",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_name",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "phonenumber",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }                                                            
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User updated successfully"
+                    }
+                }
+            }
+        },
+        "/users/delete": {
+            "delete": {
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "tags": [
+                    "Users"
+                ],
+                "summary": "",
+                "description": "This api endpoint for delete the user",
+                "operationId": "delete user",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [                      
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }                                                                               
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User deleted successfully"
+                    }
+                }
+            }
+        }
+    }
+}
